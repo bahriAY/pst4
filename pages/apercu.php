@@ -61,13 +61,10 @@ while ($donnees = $reponse->fetch())
                     
                     <td><input type="checkbox" name="visibilité" ></td>
                    <!-- <?php echo '<td><a href="creation.php?desc_ID='.$donnees['cours_id'].'">Modifier/Completer</a></td>';  //Modifier ?> -->
-                    <td>
-                    <input type="button" name="supchamp" value="supprimer ce champ?">
-                    <?php
-                    /* SUPPRIMER CHAMP */
+                    
+                  <?php echo '<td><a href="SupUnChamp.php?champ_ID='.$donnees['contenu_id'].'&desc_ID='.$donnees['cours_id'].'"  >Supprimer ce champ</a></td>';  //supunchamp ?>
 
-                    ?>
-                    </td>
+                    
 
                 </tr>
                 </br>

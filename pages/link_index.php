@@ -239,19 +239,9 @@ while ($donnees = $reponse->fetch())
                     <td><input type="checkbox" name="visibilité" ></td>
                     <?php echo '<td><a href="apercu.php?desc_ID='.$donnees['cours_id'].'">Apercu</a></td>'; //Apercu ?>
                     <?php echo '<td><a href="creation.php?desc_ID='.$donnees['cours_id'].'">Modifier/Completer</a></td>';  //Modifier ?>
-                    <td>
-                    <input type="button" name="supligne" value="supprimer le cours">
-                    <?php/*
-                     // $cnx = mysql_connect( "localhost", "root", "" ) ;
-                      $db = mysql_select_db( "bdd_pst" ) ;
- 
-                    $id = $donnees['desc_ID'];
-
-                    if(isset($_POST['supligne'])){
-                        $sql = "DELETE * FROM description WHERE id = ".$id ;
-                        $requete = mysql_query( $sql) ;
-                    } */
-                    ?>
+                   
+                    <td>                    
+                    <?php echo '<td><a href="SupToutCours.php?desc_ID='.$donnees['cours_id'].'">Supprimer ce Cours</a></td>'; //supprimer ?>
                     </td>
 
                 </tr>
