@@ -1,0 +1,2 @@
+link_index.php: "mes cours"
+index.php: formulaire pour creer un cours ( les caracteristiques)

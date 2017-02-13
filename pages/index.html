@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hapiam Cours</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="../dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<!--
+<script type='text/javascript'>
+        function addFields(){
+            // Number of inputs to create
+            var number = document.getElementById("member").value;
+            // Container <div> where dynamic content will be placed
+            var container = document.getElementById("container");
+            // Clear previous contents of the container
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+            for (i=0;i<number;i++){
+                // Append a node with a random text
+                container.appendChild(document.createTextNode("Member " + (i+1)));
+                // Create an <input> element, set its type and name attributes
+                var input = document.createElement("input");
+                input.type = "text";
+                input.name = "Partie" + i;
+                container.appendChild(input);
+                // Append a line break 
+                container.appendChild(document.createElement("br"));
+            }
+        }
+</script> -->
+
+</head>
+
+<body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">COURS HAPIAM</a>
+            </div>
+        <ul class="nav navbar-top-links navbar-right">
+        <li>
+        <a href="link_index.php"><button  type="button" class="btn btn-info">Mes cours ajoutés</button></a>
+        </li>
+        <li>
+        <a href="faq.php"><button  type="button" class="btn btn-outline btn-info">FAQ</button></a>
+        </li>
+        </ul>                
+
+            <!-- /.navbar-header -->
+
+        </nav>
+    <div id="wrapper">
+
+
+
+        <div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Ajoutez un cours</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Formulaire
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form" method="POST" action="link_index.php" enctype="multipart/form-data">
+
+                                        <div class="form-group">
+                                            <label>Titre du cours</label>
+                                            <input class="form-control" name="titre"> </input>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Matière</label>
+                                            <input class="form-control" name="matiere"> </input>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Compètences</label>
+                                            <input class="form-control" name="competence"> </input>
+                                            <p class="help-block">Exemple. Terminale, Collège</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Votre nom</label>
+                                            <input class="form-control" placeholder="Nom de l'enseignant(e)" name="nom_prof">
+                                        </div>
+                                       <!-- <div class="form-group">
+                                            <label>Static Control</label>
+                                            <p class="form-control-static">email@example.com</p>
+                                        </div> -->
+
+
+                                        <div class="form-group">
+                                            <label>Objectifs du cours</label>
+                                            <textarea class="form-control" rows="2" name="objectif"></textarea>
+                                        </div>
+
+                                        
+
+                                    
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                <div class="col-lg-6">
+
+
+
+                                        <div class="form-group">
+                                            <label>Type de cours</label>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="" name="case_texte" checked>Document texte
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="" name="case_video">Vidéo
+                                                </label>
+                                            </div>
+ 
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Lien vidéo</label>
+                                            <input class="form-control" name="videolink"> </input>
+                                        </div>
+                                   <!--     <div class="form-group">
+                                            <label>Support</label>
+                                            <input type="file" name="monfichier">
+                                        </div>            
+
+
+                                        <div class="form-group">
+
+                                        <input class="form-control" type="text" id="member" name="Chapitre" value="">Nombre de partie: (max. 10)<br />
+                                        <a href="#" id="filldetails" onclick="addFields()">Renseignez les parties</a>
+                                        <div id="container"/>                                    
+                                        </div>
+                                       
+                                        </div> -->
+                                        </br>                                
+                                        <button type="submit" class="btn btn-default">Submit Button</button>
+                                        <button type="reset" class="btn btn-default">Reset Button</button>                                
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="../bower_components/raphael/raphael-min.js"></script>
+    <script src="../bower_components/morrisjs/morris.min.js"></script>
+    <script src="../js/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

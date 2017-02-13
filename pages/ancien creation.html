@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+    	<meta charset="utf-8">
+    	<title>Création Cours</title>
+
+	</head>
+
+	<body>
+		<button type="button" onclick="addField()" >+</button>
+		<form method="post" action="creation_cours.php" >
+    	<div id="champs" >
+    	<table>
+   		<tr>
+       		<td>Type</td>
+       		<td>Rang</td>
+       		<td>Contenu</td>
+       		<td>Visibilité</td>
+   		</tr>
+   		<tr>
+        	<td>
+        		
+        		<SELECT name="Type[]">
+        				<OPTION>Titre
+        				<OPTION>Sous-titre
+        				<OPTION>Exemple
+        		</SELECT>
+
+        		
+			</td>
+        	<td><input type="text" name="Rang[]" /></td>
+        	<td><input type="text" name="Contenu[]" /></td>
+        	<td><input type="checkbox" value="" name="vis[]"></td>
+        	<br>
+    	
+    	</table>
+    	</div>
+
+    <script type="text/javascript" >
+        var div = document.getElementById('champs');
+        function addInput(){
+            var input = document.createElement("input");
+            input.name = name;
+            div.appendChild(input);
+        }
+        function addSelect(){
+        	var select = document.createElement("select");
+        	var option = new Option("Titre");
+        	var option2 = new Option("Sous-titre");
+        	var option3 = new Option("Exemple");
+ 			select.options.add(option);
+ 			select.options.add(option2);
+ 			select.options.add(option3);
+        	select.name = name;
+        	div.appendChild(select);
+		}
+		function addbox(){
+			var input2 = document.createElement("input");
+			input2.setAttribute("type", "checkbox");
+            input2.name = name;
+            div.appendChild(input2);
+		}
+       
+        function addField() {
+        	addSelect("Type[]");
+            addInput("Rang[]");
+            addInput("Contenu[]");
+            addbox("vis[]")
+            div.appendChild(document.createElement("br"));
+        }
+    </script>
+    <p>Progression</p>
+    <input type="text" name="prog" /><br>
+    <input type="submit" href="apercu.php"/>
+
+    
+    </form>
+	
+
+	</body>
+</html>
