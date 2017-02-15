@@ -1,0 +1,79 @@
+
+.Grand-titre{
+	color: #0174DF;
+	font-size: 50px;
+	font-family: Verdana;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: justify;
+}
+
+.Titre{
+	color: #2E9AFE;
+	font-size: xx-large;
+	font-family: Verdana;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: justify;
+}
+
+.Sous-titre{
+	color: #01DFD7;
+	font-size: x-large;
+	font-family: Verdana;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: justify;
+}
+
+.Exemple{
+	color: #424242;
+	font-size: large;
+	font-family: Verdana;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-align: justify;
+}
+
+.Propriété{
+	color: #610B0B;
+	font-size: large;
+	font-family: Verdana;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-align: justify;
+}
+
+.Définition{
+	color: #088A08;
+	font-size: large;
+	font-family: Verdana;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-align: justify;
+}
+
+.Paragraphe{
+	color: black;
+	font-size: large;
+	font-family: Verdana;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-align: justify;
+}
+
+.planaperçu{
+	margin: auto;
+}
+
+td
+{
+    border: 1px solid #E6E6E6;
+}

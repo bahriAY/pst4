@@ -47,9 +47,13 @@
         	<td>
         		
         		<SELECT name="Type[]">
+                        <OPTION>Grand-titre
         				<OPTION>Titre
         				<OPTION>Sous-titre
         				<OPTION>Exemple
+                        <OPTION>Propriété
+                        <OPTION>Définition
+                        <OPTION>Paragraphe
         		</SELECT>
 
         		
@@ -73,9 +77,14 @@
 
         newCell.innerHTML = '<input type="text"/>';
         var ajout='<select name="Type[]">';
+        ajout+='<option>Grand-titre</option>';
         ajout+='<option>Titre</option>';
         ajout+='<option>Sous-titre</option>';
         ajout+='<option>Exemple</option>';
+        ajout+='<option>Propriété</option>';
+        ajout+='<option>Définition</option>';
+        ajout+='<option>Paragraphe</option>';
+
 
         newCell.innerHTML = ajout;
 
