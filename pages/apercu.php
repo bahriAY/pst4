@@ -50,7 +50,7 @@ while ($donnees = $reponse->fetch())
                    <!-- <td><?php echo $donnees['type'];?></td>
                     <td><?php echo $donnees['rang'];?></td> -->
                     <td class="<?php echo $donnees['type'];?>"><?php echo $donnees['contenu'];?></td>                 
-                  <?php echo '<td><a href="SupUnChamp.php?champ_ID='.$donnees['contenu_id'].'&desc_ID='.$donnees['cours_id'].'"  >Supprimer ce champ</a></td>';  //supunchamp ?>
+                  <?php echo '<td><a  href="SupUnChamp.php?champ_ID='.$donnees['contenu_id'].'&desc_ID='.$donnees['cours_id'].'" >X</a></td>';  //supunchamp ?>
                 </tr>
             <?php }  
 $reponse->closeCursor(); // Termine le traitement de la requête
