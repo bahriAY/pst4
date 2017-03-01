@@ -28,6 +28,7 @@ $reponse = $bdd->query('SELECT * FROM contenu WHERE cours_id ="'.$desc_ID.'" ORD
     </head>
     <body>
 <input type="hidden" name="desc_ID" value="<?php echo $_GET['desc_ID'];?>">
+
 <!-- /.panel-heading -->
 <div class="panel-body">
 <div class="table-responsive">
@@ -57,5 +58,6 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 </table>
 </div>
 </div>
+    <a  href="link_index.php">Retour à vos cours</a>
     </body>
 </html>

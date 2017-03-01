@@ -1,0 +1,19 @@
+#main{
+margin:auto;
+position:relative;
+}
+
+#formulaire{
+width:650px;
+position:absolute;
+background-color:#EFEFFB;
+}
+
+#visualiser{
+margin-left:650px;
+background-color: #FBEFF2;
+}
+
+h1{
+	color: black;
+}

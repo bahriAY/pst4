@@ -4,6 +4,9 @@
 	<head>
 
     	<meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/ajoutStyle.css">
+        <link rel="stylesheet" type="text/css" href="../css/apercuStyle.css">
+
     	<title>Création Cours</title>
     <script type="text/javascript">
 
@@ -15,9 +18,11 @@
 	</head>
 
 	<body>
+<div id="main">
 
-        <?php // auto complétion des textes
 
+<div id="formulaire">
+        <?php 
            try
         {
             $bdd = new PDO('mysql:host=localhost;dbname=hapiam;charset=utf8','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -26,14 +31,9 @@
         {
 
             die('Erreur : '.$e->getMessage());
-        }
-
-           // $reponse = $bdd->query('SELECT *  FROM contenu WHERE cours_id='.$_GET['desc_ID']);
-
-        // rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr?>
-
-		<input type="button" onclick="addField()" value="Ajouter"/>
-       
+        }?>
+        <h1> Formulaire de création du contenu </h1>
+		<input type="button" onclick="addField()" value=" + Ajouter des champs"/>
 		<form method="post" action="creation_cours.php" >
     	<div id="champs" >
     	<table id="matable">
@@ -107,13 +107,54 @@
 
     <p>Progression</p>
     <input type="text" name="progress"></input>
+    </br></br>
     <input type="hidden" name="desc_ID" value="<?php echo $_GET['desc_ID'];?>">
     <input type="submit" href="apercu.php"/>
-    
+    </br></br>
+    <button><a  href="link_index.php">Retour à vos cours</a></button>
     <?php  $desc_ID= $_GET['desc_ID'] ;  //ajout desc_ID ?>
     
     </form>
-	
+</div>
 
+<div id="visualiser">
+
+    <h1>Visualisation en direct</h1>
+   <?php $reponse = $bdd->query('SELECT * FROM contenu WHERE cours_id ="'.$desc_ID.'" ORDER BY rang');          
+  ?>  
+  <div class="panel-body">
+<div class="table-responsive">
+
+<table class="planaperçu">
+<thead>
+                <tr>
+                    
+                    <td>Rang</td>
+                   <!--   
+                    <td>Type</td>
+                    <td>Visibilité</td> 
+                    -->
+                   <td>Contenu</td>
+                  
+                </tr>
+</thead>
+<?php
+while ($donnees = $reponse->fetch())
+{ 
+?>              
+                <tr class="success">
+                   <!-- <td><?php echo $donnees['type'];?></td>-->
+                    <td><?php echo $donnees['rang'];?></td> 
+                    <td class="<?php echo $donnees['type'];?>"><?php echo $donnees['contenu'];?></td>                 
+                  <?php echo '<td><a href="SupUnChampVisu.php?champ_ID='.$donnees['contenu_id'].'&desc_ID='.$donnees['cours_id'].'" >X</a></td>';  //supunchamp ?>
+                </tr>
+            <?php }  
+$reponse->closeCursor(); // Termine le traitement de la requête
+            ?>
+</table>
+</div>
+</div>
+</div>
+</div> <!-- main -->
 	</body>
 </html>

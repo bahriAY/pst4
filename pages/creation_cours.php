@@ -80,6 +80,6 @@ for($n=0;$n<$i;$n++)
 	} 
 }
 	
-exit();
+exit(header( 'Location:creation.php?desc_ID='.$descid));
 
 ?>
