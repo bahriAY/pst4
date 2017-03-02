@@ -23,10 +23,15 @@ $reponse = $bdd->query('SELECT * FROM contenu WHERE cours_id ="'.$desc_ID.'" ORD
 
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/apercuStyle.css">
+        <link rel="stylesheet" type="text/css" href="../css/apercuMeP.css">
         <title>Apérçu du cours</title>
 
     </head>
     <body>
+<div id="main">
+
+<div id="formulaire">
+<a  href="link_index.php">Retour à vos cours</a>
 <input type="hidden" name="desc_ID" value="<?php echo $_GET['desc_ID'];?>">
 
 <!-- /.panel-heading -->
@@ -50,7 +55,7 @@ while ($donnees = $reponse->fetch())
                    <!-- <td><?php echo $donnees['type'];?></td>
                     <td><?php echo $donnees['rang'];?></td> -->
                     <td class="<?php echo $donnees['type'];?>"><?php echo $donnees['contenu'];?></td>                 
-                  <?php echo '<td><a  href="SupUnChamp.php?champ_ID='.$donnees['contenu_id'].'&desc_ID='.$donnees['cours_id'].'" >X</a></td>';  //supunchamp ?>
+                  <?php echo '<td><a class="BoutonSup" href="SupUnChamp.php?champ_ID='.$donnees['contenu_id'].'&desc_ID='.$donnees['cours_id'].'" >X</a></td>';  //supunchamp ?>
                 </tr>
             <?php }  
 $reponse->closeCursor(); // Termine le traitement de la requête
@@ -58,6 +63,25 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 </table>
 </div>
 </div>
-    <a  href="link_index.php">Retour à vos cours</a>
+
+</div> <!-- form> -->
+
+
+
+<div id="visualiser"> <!-- Feedbacks -->
+<table id="Feedbacks">
+    <thead>
+                <tr>
+                <td rowspan="2">Nombre de vue</td>
+                <td rowspan="2">Note globale</td>
+                <td colspan="2">Remarques</td>
+                <tr>
+                <td>Positives</td>
+                <td>Negatives</td>
+                </tr>
+
+</thead>
+</table>
+</div>
     </body>
 </html>

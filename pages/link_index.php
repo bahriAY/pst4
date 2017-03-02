@@ -239,6 +239,7 @@ while ($donnees = $reponse->fetch())
                     <td><input type="checkbox" name="visibilité" ></td>
                     <?php echo '<td><a href="apercu.php?desc_ID='.$donnees['cours_id'].'">Apercu</a></td>'; //Apercu ?>
                     <?php echo '<td><a href="creation.php?desc_ID='.$donnees['cours_id'].'">Modifier/Completer</a></td>';  //Modifier ?>
+
                    
                     <td>                    
                     <?php echo '<td><a href="SupToutCours.php?desc_ID='.$donnees['cours_id'].'">Supprimer ce Cours</a></td>'; //supprimer ?>

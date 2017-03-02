@@ -1,0 +1,25 @@
+#main{
+margin:auto;
+position:relative;
+}
+
+#formulaire{
+width:800px;
+position:absolute;
+}
+
+#visualiser{
+margin-left:820px;
+background-color: #f9e79f;
+}
+
+h1{
+	color: black;
+}
+
+#Feedbacks{
+	margin-left: 10px;
+}
+
+#Feedbacks. td{
+	border-color: red;

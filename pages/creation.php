@@ -41,7 +41,7 @@
        		<td>Type</td>
        		<td>Rang</td>
        		<td>Contenu</td>
-       		<td>Visibilité</td>
+       	<!--	<td>Visibilité</td> -->
    		</tr>
    		<tr>
         	<td>
@@ -59,8 +59,9 @@
         		
 			</td>
         	<td><input type="text" name="Rang[]" /></td>
-        	<td><input type="text" name="Contenu[]" /></td>
-        	<td><input type="checkbox" value="" name="vis[]"></td>
+            <td><textarea rows="6" cols="30" type="text" name="Contenu[]" > </textarea></td>
+        	<!--<td><input type="text" name="Contenu[]" /></td> -->
+       <!-- 	<td><input type="checkbox" value="" name="vis[]"></td> -->
         	<br>
     	
     	</table>
@@ -93,11 +94,11 @@
         newCell.innerHTML = '<input type="text" name="Rang[]"/>';
         newCell = newRow.insertCell(2);
 
-        newCell.innerHTML = '<input type="text" name="Contenu[]"/>';
+        newCell.innerHTML = '<textarea rows="6" cols="30" type="text" name="Contenu[]" ></textarea>';
+//<input type="text" name="Contenu[]"/>
+     /*   newCell = newRow.insertCell(3);
 
-        newCell = newRow.insertCell(3);
-
-        newCell.innerHTML = '<input type="checkbox" name="vis[]">';
+        newCell.innerHTML = '<input type="checkbox" name="vis[]">';*/
 
 
     }
@@ -120,7 +121,7 @@
 <div id="visualiser">
 
     <h1>Visualisation en direct</h1>
-   <?php $reponse = $bdd->query('SELECT * FROM contenu WHERE cours_id ="'.$desc_ID.'" ORDER BY rang');          
+   <?php $reponse = $bdd->query('SELECT * FROM contenu WHERE cours_id ="'.$desc_ID.'" ORDER BY rang, Date DESC ');          
   ?>  
   <div class="panel-body">
 <div class="table-responsive">
