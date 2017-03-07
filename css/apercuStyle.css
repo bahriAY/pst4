@@ -1,7 +1,7 @@
 
 .Grand-titre{
-	color: #0174DF;
-	font-size: 80px;
+	color: #1C2833;
+	font-size: 50px;
 	font-family: Verdana;
 	font-style: italic;
 	font-weight: bold;
@@ -10,28 +10,27 @@
 }
 
 .Titre{
-	color: #2E9AFE;
-	font-size: xx-large;
+	color: #1C2833;
+	font-size: 30px;
 	font-family: Verdana;
-	font-style: italic;
+	/*font-style: italic;*/
 	font-weight: bold;
 	text-decoration: underline;
 	text-align: justify;
 }
 
 .Sous-titre{
-	color: #01DFD7;
-	font-size: x-large;
+	color: #1C2833;
+	font-size: 25px;
 	font-family: Verdana;
-	font-style: italic;
-	font-weight: bold;
+	/*font-style: italic;*/
 	text-decoration: underline;
 	text-align: justify;
 }
 
 .Exemple{
 	color: #424242;
-	font-size: large;
+	font-size: 15px;
 	font-family: Verdana;
 	font-style: normal;
 	font-weight: normal;
@@ -40,8 +39,8 @@
 }
 
 .Propriété{
-	color: #610B0B;
-	font-size: large;
+	color: #CC0000;
+	font-size: 15px;
 	font-family: Verdana;
 	font-style: normal;
 	font-weight: normal;
@@ -51,7 +50,7 @@
 
 .Définition{
 	color: #088A08;
-	font-size: large;
+	font-size: 15px;
 	font-family: Verdana;
 	font-style: normal;
 	font-weight: normal;
@@ -61,7 +60,7 @@
 
 .Paragraphe{
 	color: black;
-	font-size: large;
+	font-size: 15px;
 	font-family: Verdana;
 	font-style: normal;
 	font-weight: normal;
@@ -74,6 +73,7 @@
 	text-align:center;
 	margin-left: 20px;
 
+
 }
 
 td
@@ -82,8 +82,8 @@ td
 
 }
 
-tr:hover{
-	background-color: #f2d7d5;
+.planaperçu tr:hover{
+	background-color:#EEEEEE;
 }
 
 .BoutonSup {

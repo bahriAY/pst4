@@ -50,6 +50,9 @@
         <li>
         <a href="faq.php"><button  type="button" class="btn btn-outline btn-info" style="border-radius: 12px">FAQ</button></a>
         </li>
+        <li>
+           <button class="btn btn-info" style="border-radius: 12px; font-weight: bold; color: #000000"><a  href="link_index.php">Retour à vos cours</a></button
+        </li>
         </ul>                
 
             <!-- /.navbar-header -->
@@ -58,7 +61,8 @@
 <div id="main">
 
 
-<div id="formulaire" style="background-color: #f5f5f5; height: 600px; padding-left: 12px">
+<div id="formulaire" style="background-color: #E5E7E9; height: 600px; padding-left: 12px">
+
         <?php 
            try
         {
@@ -69,14 +73,14 @@
 
             die('Erreur : '.$e->getMessage());
         }?>
-        <h2 style="text-align: center"> Formulaire de création du contenu </h2><Br/><Br/>
+        <h2 style="text-align: center;"> Formulaire de création du contenu </h2><Br/><Br/>
         <div>
 		<input type="button" onclick="addField()" value=" + Ajouter des champs"  class="btn btn-primary" style="border-radius: 12px"/>
         </div>
 		<form method="post" action="creation_cours.php">
     	<div id="champs">
     	<table id="matable">
-   		<tr style="font-weight: bold; color: #000000; text-align: center">
+   		<tr style="font-weight: bold; color: #424949; text-align: center;border-color: #424949;">
        		<td>Type</td>
        		<td>Rang</td>
        		<td>Contenu</td>
@@ -153,21 +157,17 @@
     <input type="submit" href="apercu.php" class="btn btn-success" style="border-radius: 12px; font-weight: bold; color: #000000; background-color: #32CD32"/>
     </div>
     </br></br>
-    <div>
-    <button class="btn btn-info" style="border-radius: 12px; font-weight: bold; color: #000000"><a  href="link_index.php">Retour à vos cours</a></button>
-    </div>
     <?php  $desc_ID= $_GET['desc_ID'] ;  //ajout desc_ID ?>
     
     </form>
 </div>
 
-<div id="visualiser" style="background-color: #f5f5f5">
-
-    <h2 style="text-align: center">Visualisation en direct</h2>
+<div id="visualiser" style="background-color: white">
+    <h2 style="text-align: center;">Aperçu du cours</h2>
    <?php $reponse = $bdd->query('SELECT * FROM contenu WHERE cours_id ="'.$desc_ID.'" ORDER BY rang, Date DESC ');          
   ?>  
   <div class="panel-body">
-<div class="table-responsive">
+<div>
 
 <table class="planaperçu">
 <thead>

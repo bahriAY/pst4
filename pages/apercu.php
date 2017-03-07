@@ -65,17 +65,18 @@ $reponse = $bdd->query('SELECT * FROM contenu WHERE cours_id ="'.$desc_ID.'" ORD
         </ul>                
 
             <!-- /.navbar-header -->
-
         </nav>
+
+
 <div id="main">
 
-<div id="formulaire" style="background-color: #f5f5f5; padding-left: 2px; width: 930px">
-
+<div id="formulaire" style="background-color: white; ">
+<div class="panel-heading" style="font-weight: bold;background-color: #81D4FA ; color: #000000">Aperçu du cours</div>
 <input type="hidden" name="desc_ID" value="<?php echo $_GET['desc_ID'];?>">
 
 <!-- /.panel-heading -->
 <div class="panel-body">
-<div class="table-responsive">
+<div >
 
 <table class="planaperçu">
 <thead>
@@ -94,7 +95,10 @@ while ($donnees = $reponse->fetch())
                    <!-- <td><?php echo $donnees['type'];?></td>
                     <td><?php echo $donnees['rang'];?></td> -->
                     <td class="<?php echo $donnees['type'];?>"><?php echo $donnees['contenu'];?></td>                 
-                  <?php echo '<td><a class="BoutonSup" href="SupUnChamp.php?champ_ID='.$donnees['contenu_id'].'&desc_ID='.$donnees['cours_id'].'" style="border-radius: 13px">X</a></td>';  //supunchamp ?>
+
+                <!--  <?php echo '<td><a class="BoutonSup" href="SupUnChamp.php?champ_ID='.$donnees['contenu_id'].'&desc_ID='.$donnees['cours_id'].'" style="border-radius: 13px">X</a></td>';  //supunchamp ?> -->
+
+
                 </tr>
             <?php }  
 $reponse->closeCursor(); // Termine le traitement de la requête
@@ -107,30 +111,26 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 
 
 
-<div id="visualiser" style="background-color: #f5f5f5; width: 2px; padding-left: 150px"> <!-- Feedbacks -->
+<div id="visualiser" style="background-color: white; "> <!-- Feedbacks -->
+<div class="panel-heading" style="font-weight: bold;background-color: #81D4FA ; color: #000000">Feedback</div>
+</br>
 <table id="Feedbacks">
     <thead>
                 <tr>
-                <td rowspan="2" style="text-align: center; font-weight: bold">Nombre de vue</td>
-                <td rowspan="2" style="text-align: center; font-weight: bold">Note globale
-                <div class="rating"><!--
-                --><a href="#5" title="Donner 5 étoiles">☆</a><!--
-                --><a href="#4" title="Donner 4 étoiles">☆</a><!--
-                --><a href="#3" title="Donner 3 étoiles">☆</a><!--
-                --><a href="#2" title="Donner 2 étoiles">☆</a><!--
-                --><a href="#1" title="Donner 1 étoile">☆</a>
-                </div>
+                <td rowspan="2" style="text-align: center; font-weight: bold; width: 100px;border-color: black;background-color: ">Nombre de vue</td>
+                <td rowspan="2" style="text-align: center; font-weight: bold;width: 50px;border-color: black;">Note globale
+
                 </td>
-                <td colspan="2" style="text-align: center; font-weight: bold">Remarques</td>
+                <td colspan="2" style="text-align: center; font-weight: bold;width: 400px;border-color: black;">Remarques</td>
                 <tr>
-                <td style="text-align: center; font-weight: bold">Positives</td>
-                <td style="text-align: center; font-weight: bold">Negatives</td>
+                <td style="text-align: center; font-weight: bold;border-color: black;">Positives</td>
+                <td style="text-align: center; font-weight: bold;border-color: black;">Negatives</td>
                 </tr>
                 </tr>
 
 </thead>
 </table>
-</div>
+</div></div>
 
     </body>
 </html>

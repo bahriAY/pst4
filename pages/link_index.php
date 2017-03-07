@@ -94,7 +94,7 @@ if (isset($_POST['titre']) AND isset($_POST['matiere']) AND isset($_POST['compet
 
 else{
 
-	echo 'Tu n\'as pas rempli tout les champs';
+	//echo 'Tu n\'as pas rempli tout les champs';
 }
 // Puis rediriger vers une autre page comme ceci :
 
@@ -168,10 +168,11 @@ else{
             <!-- /.navbar-header -->
 
         </nav>
-    <div class="row" >
+    </br>
+    <div>
             <div class="col-lg-12" >
-        <div class="panel panel-default" style="height: 650px">
-<div class="panel-heading" style="font-weight: bold; color: #000000">
+        <div class="panel panel-default" style="height: auto;">
+<div class="panel-heading" style="font-weight: bold;background-color: #81D4FA ; color: #000000">
                             Mes cours postés
                         </div>
             <div class="panel-body">
@@ -194,17 +195,17 @@ $reponse = $bdd->query('SELECT * FROM cours ');
 <div class="panel-body">
 <div class="table-responsive">
 
-<table class="table">
+<table>
 <thead>
                 <tr>
-                    <td style="font-weight: bold; color: #000000"><center>Titre</center></td>
-                    <td style="font-weight: bold; color: #000000">Matiere</td>
-                    <td style="font-weight: bold; color: #000000">Competence</td>
-                    <td style="font-weight: bold; color: #000000">Nom_prof</td>
-                    <td style="font-weight: bold; color: #000000">Objectif</td>
-                    <td style="font-weight: bold; color: #000000">Type</td>
-                    <td style="font-weight: bold; color: #000000"><center>Progression du contenu</center></td>
-                    <td style="font-weight: bold; color: #000000"><center>Rendre visible</center></td>
+                    <td style="font-weight: bold; border: 2px solid #2E86C1;background-color: #EAECEE;"><center>Titre</center></td>
+                    <td style="font-weight: bold; border: 2px solid #2E86C1;background-color: #EAECEE;text-align: center;">Matiere</td>
+                    <td style="font-weight: bold; border: 2px solid #2E86C1;background-color: #EAECEE;">Competence</td>
+                    <td style="font-weight: bold; border: 2px solid #2E86C1;background-color: #EAECEE;">Nom du professeur</td>
+                    <td style="font-weight: bold; border: 2px solid #2E86C1;background-color: #EAECEE;text-align: center;">Objectif</td>
+                    <td style="font-weight: bold; border: 2px solid #2E86C1;background-color: #EAECEE;">Type</td>
+                    <td style="font-weight: bold; border: 2px solid #2E86C1;background-color: #EAECEE;"><center>Progression du contenu</center></td>
+                    <td style="font-weight: bold; border: 2px solid #2E86C1; width:50px;background-color: #EAECEE;"><center>Rendre visible</center></td>
                 </tr>
 </thead>
 <?php
@@ -212,13 +213,13 @@ while ($donnees = $reponse->fetch())
 { 
 ?>              
                 <tr class="success">
-                    <td><?php echo $donnees['titre'];?></td>
-                    <td><?php echo $donnees['matiere'];?></td>
-                    <td><?php echo $donnees['competence'];?></td>
-                    <td><?php echo $donnees['nom_prof'];?></td>
-                    <td><?php echo $donnees['objectif'];?></td>
+                    <td style="border: 1px solid #2E86C1; text-align: center;"><?php echo $donnees['titre'];?></td>
+                    <td style="border: 1px solid #2E86C1; text-align: center;"><?php echo $donnees['matiere'];?></td>
+                    <td style="border: 1px solid #2E86C1; text-align: center;"><?php echo $donnees['competence'];?></td>
+                    <td style="border: 1px solid #2E86C1; text-align: center;"><?php echo $donnees['nom_prof'];?></td>
+                    <td style="border: 1px solid #2E86C1; text-align: center;"><?php echo $donnees['objectif'];?></td>
 
-                    <td>
+                    <td style="border: 1px solid #2E86C1; text-align: center;">
                     <?php 
                     if ($donnees['type']== 0) {
                         # code....
@@ -236,15 +237,16 @@ while ($donnees = $reponse->fetch())
                     </td>
 
 
-                   <td><progress max="100" value="<?php echo $donnees['progression'];?>" form="form-id"></progress> </td> 
+                   <td style="border: 1px solid #2E86C1; text-align: center;"><progress max="100" value="<?php echo $donnees['progression'];?>" form="form-id"></progress> </td> 
                     
                     
-                    <td><center><input type="checkbox" name="visibilité" style="width: 16px; height: 16px" ></center></td>
+                    <td style="border: 1px solid #2E86C1; text-align: center;"><center><input type="checkbox" name="visibilité" style="width: 16px; height: 16px" ></center></td>
+
                     <?php echo '<td><a href="apercu.php?desc_ID='.$donnees['cours_id'].'"><button type="button" class="btn btn-default" style="border-radius: 12px">Apercu</button></a></td>'; //Apercu ?>
                     <?php echo '<td><a href="creation.php?desc_ID='.$donnees['cours_id'].'"><button type="button" class="btn btn-default" style="border-radius: 12px">Modifier/Completer</button></a></td>';  //Modifier ?>
 
                    
-                    <td>                    
+                    <td >                    
                     <?php echo '<td><a href="SupToutCours.php?desc_ID='.$donnees['cours_id'].'"><button type="button" class="btn btn-default" style="border-radius: 12px">Supprimer ce Cours</button></a></td>'; //supprimer ?>
                     </td>
 
@@ -258,6 +260,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 
             ?>
 </table>
+</br>
 </div>
 <a href="index.html"><button class="btn btn-info" style="color: #000000; font-weight: bold; border-radius: 12px" >AJOUTER UN COURS</button></a>
 </div>
