@@ -4,8 +4,31 @@
 	<head>
 
     	<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+         <!-- Bootstrap Core CSS -->
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Timeline CSS -->
+        <link href="../dist/css/timeline.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+        <!-- Morris Charts CSS -->
+        <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
         <link rel="stylesheet" type="text/css" href="../css/ajoutStyle.css">
         <link rel="stylesheet" type="text/css" href="../css/apercuStyle.css">
+         <link rel="shortcut icon" type="image/x-icon" href="logo-hapiam.jpg" />
 
     	<title>Création Cours</title>
     <script type="text/javascript">
@@ -15,13 +38,27 @@
     
 
     </script>
+   
 	</head>
 
 	<body>
+       <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; background-color: #000000">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html" style="font-weight:bold;">COURS HAPIAM</a>
+            </div>
+        <ul class="nav navbar-top-links navbar-right">
+        <li>
+        <a href="faq.php"><button  type="button" class="btn btn-outline btn-info" style="border-radius: 12px">FAQ</button></a>
+        </li>
+        </ul>                
+
+            <!-- /.navbar-header -->
+
+        </nav>
 <div id="main">
 
 
-<div id="formulaire">
+<div id="formulaire" style="background-color: #f5f5f5; height: 600px; padding-left: 12px">
         <?php 
            try
         {
@@ -32,12 +69,14 @@
 
             die('Erreur : '.$e->getMessage());
         }?>
-        <h1> Formulaire de création du contenu </h1>
-		<input type="button" onclick="addField()" value=" + Ajouter des champs"/>
-		<form method="post" action="creation_cours.php" >
-    	<div id="champs" >
+        <h2 style="text-align: center"> Formulaire de création du contenu </h2><Br/><Br/>
+        <div>
+		<input type="button" onclick="addField()" value=" + Ajouter des champs"  class="btn btn-primary" style="border-radius: 12px"/>
+        </div>
+		<form method="post" action="creation_cours.php">
+    	<div id="champs">
     	<table id="matable">
-   		<tr>
+   		<tr style="font-weight: bold; color: #000000; text-align: center">
        		<td>Type</td>
        		<td>Rang</td>
        		<td>Contenu</td>
@@ -46,7 +85,7 @@
    		<tr>
         	<td>
         		
-        		<SELECT name="Type[]">
+        		<SELECT name="Type[]" style="border-radius: 10px">
                         <OPTION>Grand-titre
         				<OPTION>Titre
         				<OPTION>Sous-titre
@@ -58,8 +97,8 @@
 
         		
 			</td>
-        	<td><input type="text" name="Rang[]" /></td>
-            <td><textarea rows="6" cols="30" type="text" name="Contenu[]" > </textarea></td>
+        	<td><input type="text" name="Rang[]"  style="border-radius: 10px; width: 80px"/></td>
+            <td><textarea rows="6" cols="30" type="text" name="Contenu[]"  style="border-radius: 10px"> </textarea></td>
         	<!--<td><input type="text" name="Contenu[]" /></td> -->
        <!-- 	<td><input type="checkbox" value="" name="vis[]"></td> -->
         	<br>
@@ -67,7 +106,7 @@
     	</table>
     	</div>
 
-    <script type="text/javascript" >
+    <script type="text/javascript">
 
         function addField(){
 
@@ -77,7 +116,7 @@
         var newCell = newRow.insertCell(0);
 
         newCell.innerHTML = '<input type="text"/>';
-        var ajout='<select name="Type[]">';
+        var ajout='<select name="Type[]" style="border-radius: 10px">';
         ajout+='<option>Grand-titre</option>';
         ajout+='<option>Titre</option>';
         ajout+='<option>Sous-titre</option>';
@@ -91,10 +130,10 @@
 
         newCell = newRow.insertCell(1);
 
-        newCell.innerHTML = '<input type="text" name="Rang[]"/>';
+        newCell.innerHTML = '<input type="text" name="Rang[]" style="border-radius: 10px; width: 80px"/>';
         newCell = newRow.insertCell(2);
 
-        newCell.innerHTML = '<textarea rows="6" cols="30" type="text" name="Contenu[]" ></textarea>';
+        newCell.innerHTML = '<textarea rows="6" cols="30" type="text" name="Contenu[]" style="border-radius: 10px" ></textarea>';
 //<input type="text" name="Contenu[]"/>
      /*   newCell = newRow.insertCell(3);
 
@@ -106,21 +145,25 @@
  
     </script>
 
-    <p>Progression</p>
-    <input type="text" name="progress"></input>
+    <p style="color: #000000; font-weight: bold; padding-left: 44px">Progression</p>
+    <input type="text" name="progress" style="border-radius: 12px"></input>
     </br></br>
     <input type="hidden" name="desc_ID" value="<?php echo $_GET['desc_ID'];?>">
-    <input type="submit" href="apercu.php"/>
+    <div>
+    <input type="submit" href="apercu.php" class="btn btn-success" style="border-radius: 12px; font-weight: bold; color: #000000; background-color: #32CD32"/>
+    </div>
     </br></br>
-    <button><a  href="link_index.php">Retour à vos cours</a></button>
+    <div>
+    <button class="btn btn-info" style="border-radius: 12px; font-weight: bold; color: #000000"><a  href="link_index.php">Retour à vos cours</a></button>
+    </div>
     <?php  $desc_ID= $_GET['desc_ID'] ;  //ajout desc_ID ?>
     
     </form>
 </div>
 
-<div id="visualiser">
+<div id="visualiser" style="background-color: #f5f5f5">
 
-    <h1>Visualisation en direct</h1>
+    <h2 style="text-align: center">Visualisation en direct</h2>
    <?php $reponse = $bdd->query('SELECT * FROM contenu WHERE cours_id ="'.$desc_ID.'" ORDER BY rang, Date DESC ');          
   ?>  
   <div class="panel-body">
@@ -130,12 +173,12 @@
 <thead>
                 <tr>
                     
-                    <td>Rang</td>
+                    <td style="font-weight: bold; color: #000000">Rang</td>
                    <!--   
                     <td>Type</td>
                     <td>Visibilité</td> 
                     -->
-                   <td>Contenu</td>
+                   <td style="font-weight: bold; color: #000000">Contenu</td>
                   
                 </tr>
 </thead>
@@ -145,9 +188,9 @@ while ($donnees = $reponse->fetch())
 ?>              
                 <tr class="success">
                    <!-- <td><?php echo $donnees['type'];?></td>-->
-                    <td><?php echo $donnees['rang'];?></td> 
+                    <td style="font-weight: bold" class="badge"><?php echo $donnees['rang'];?></td> 
                     <td class="<?php echo $donnees['type'];?>"><?php echo $donnees['contenu'];?></td>                 
-                  <?php echo '<td><a href="SupUnChampVisu.php?champ_ID='.$donnees['contenu_id'].'&desc_ID='.$donnees['cours_id'].'" >X</a></td>';  //supunchamp ?>
+                  <?php echo '<td><a href="SupUnChampVisu.php?champ_ID='.$donnees['contenu_id'].'&desc_ID='.$donnees['cours_id'].'" class="btn btn-warning btn-rectangle" style="border-radius: 13px; background-color: #B22222; color: #FFFAFA ">X</a></td>';  //supunchamp ?>
                 </tr>
             <?php }  
 $reponse->closeCursor(); // Termine le traitement de la requête

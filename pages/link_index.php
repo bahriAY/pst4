@@ -134,6 +134,9 @@ else{
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!--logo hapiam-->
+    <link rel="shortcut icon" type="image/x-icon" href="logo-hapiam.jpg" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -149,26 +152,26 @@ else{
 <body>
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; background-color: #000000">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">COURS HAPIAM</a>
+                <a class="navbar-brand" href="index.html" style="font-weight: bold; font-size: 16px">COURS HAPIAM</a>
             </div>
         <ul class="nav navbar-top-links navbar-right">
         <li>
-        <a href="link_index.php"><button  type="button" class="btn btn-info">Mes cours ajoutés</button></a>
+        <a href="link_index.php"><button  type="button" class="btn btn-info" style="border-radius: 12px">Mes cours ajoutés</button></a>
         </li>
         <li>
-        <a href="faq.php"><button  type="button" class="btn btn-outline btn-info">FAQ</button></a>
+        <a href="faq.php"><button  type="button" class="btn btn-outline btn-info" style="border-radius: 12px">FAQ</button></a>
         </li>
         </ul>                
 
             <!-- /.navbar-header -->
 
         </nav>
-    <div class="row">
-            <div class="col-lg-12">
-        <div class="panel panel-default">
-<div class="panel-heading">
+    <div class="row" >
+            <div class="col-lg-12" >
+        <div class="panel panel-default" style="height: 650px">
+<div class="panel-heading" style="font-weight: bold; color: #000000">
                             Mes cours postés
                         </div>
             <div class="panel-body">
@@ -194,14 +197,14 @@ $reponse = $bdd->query('SELECT * FROM cours ');
 <table class="table">
 <thead>
                 <tr>
-                    <td>titre</td>
-                    <td>matiere</td>
-                    <td>competence</td>
-                    <td>nom_prof</td>
-                    <td>objectif</td>
-                    <td>type</td>
-                    <td>Progression du contenu </td>
-                    <td>Rendre visible</td>
+                    <td style="font-weight: bold; color: #000000"><center>Titre</center></td>
+                    <td style="font-weight: bold; color: #000000">Matiere</td>
+                    <td style="font-weight: bold; color: #000000">Competence</td>
+                    <td style="font-weight: bold; color: #000000">Nom_prof</td>
+                    <td style="font-weight: bold; color: #000000">Objectif</td>
+                    <td style="font-weight: bold; color: #000000">Type</td>
+                    <td style="font-weight: bold; color: #000000"><center>Progression du contenu</center></td>
+                    <td style="font-weight: bold; color: #000000"><center>Rendre visible</center></td>
                 </tr>
 </thead>
 <?php
@@ -236,13 +239,13 @@ while ($donnees = $reponse->fetch())
                    <td><progress max="100" value="<?php echo $donnees['progression'];?>" form="form-id"></progress> </td> 
                     
                     
-                    <td><input type="checkbox" name="visibilité" ></td>
-                    <?php echo '<td><a href="apercu.php?desc_ID='.$donnees['cours_id'].'">Apercu</a></td>'; //Apercu ?>
-                    <?php echo '<td><a href="creation.php?desc_ID='.$donnees['cours_id'].'">Modifier/Completer</a></td>';  //Modifier ?>
+                    <td><center><input type="checkbox" name="visibilité" style="width: 16px; height: 16px" ></center></td>
+                    <?php echo '<td><a href="apercu.php?desc_ID='.$donnees['cours_id'].'"><button type="button" class="btn btn-default" style="border-radius: 12px">Apercu</button></a></td>'; //Apercu ?>
+                    <?php echo '<td><a href="creation.php?desc_ID='.$donnees['cours_id'].'"><button type="button" class="btn btn-default" style="border-radius: 12px">Modifier/Completer</button></a></td>';  //Modifier ?>
 
                    
                     <td>                    
-                    <?php echo '<td><a href="SupToutCours.php?desc_ID='.$donnees['cours_id'].'">Supprimer ce Cours</a></td>'; //supprimer ?>
+                    <?php echo '<td><a href="SupToutCours.php?desc_ID='.$donnees['cours_id'].'"><button type="button" class="btn btn-default" style="border-radius: 12px">Supprimer ce Cours</button></a></td>'; //supprimer ?>
                     </td>
 
                 </tr>
@@ -256,7 +259,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
             ?>
 </table>
 </div>
-<button><a href="index.html">AJOUTER UN COURS</a></button>
+<a href="index.html"><button class="btn btn-info" style="color: #000000; font-weight: bold; border-radius: 12px" >AJOUTER UN COURS</button></a>
 </div>
                 
 
